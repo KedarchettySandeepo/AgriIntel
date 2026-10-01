@@ -1,0 +1,29 @@
+# Secrets
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# YOLO / trained models / runs
+runs/
+*.pt
+
+# Datasets
+dataset/
+
+# Generated evaluation files
+*.csv
+*.png
+*.txt
+
+# Error/output folders
+wheat_errors/
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db
