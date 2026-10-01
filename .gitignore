@@ -16,7 +16,7 @@ dataset/
 # Generated evaluation files
 *.csv
 *.png
-*.txt
+
 
 # Error/output folders
 wheat_errors/
