@@ -1,0 +1,1296 @@
+{
+  "title": "AgriIntel Multi-Crop Dataset Manifest (v5)",
+  "version": "5.0.0",
+  "random_seed": 42,
+  "total_classes": 87,
+  "total_crops": 22,
+  "sample_totals": {
+    "train": 64392,
+    "val": 8157,
+    "test": 8257,
+    "total": 80806
+  },
+  "crops_summary": {
+    "Apple": {
+      "classes": 4,
+      "images": 3171
+    },
+    "Banana": {
+      "classes": 4,
+      "images": 1842
+    },
+    "Blueberry": {
+      "classes": 1,
+      "images": 1502
+    },
+    "Cherry_(including_sour)": {
+      "classes": 2,
+      "images": 1906
+    },
+    "Chilli": {
+      "classes": 8,
+      "images": 3383
+    },
+    "Corn_(maize)": {
+      "classes": 4,
+      "images": 3852
+    },
+    "Cotton": {
+      "classes": 5,
+      "images": 2500
+    },
+    "Grape": {
+      "classes": 4,
+      "images": 4063
+    },
+    "Mango": {
+      "classes": 8,
+      "images": 4000
+    },
+    "Orange": {
+      "classes": 1,
+      "images": 5507
+    },
+    "Paddy": {
+      "classes": 10,
+      "images": 10407
+    },
+    "Palm": {
+      "classes": 4,
+      "images": 296
+    },
+    "Peach": {
+      "classes": 2,
+      "images": 2657
+    },
+    "Pepper,_bell": {
+      "classes": 2,
+      "images": 2475
+    },
+    "Potato": {
+      "classes": 3,
+      "images": 2152
+    },
+    "Raspberry": {
+      "classes": 1,
+      "images": 371
+    },
+    "Soybean": {
+      "classes": 1,
+      "images": 5090
+    },
+    "Squash": {
+      "classes": 1,
+      "images": 1835
+    },
+    "Strawberry": {
+      "classes": 2,
+      "images": 1565
+    },
+    "Tomato": {
+      "classes": 10,
+      "images": 18160
+    },
+    "Turmeric": {
+      "classes": 4,
+      "images": 781
+    },
+    "Wheat": {
+      "classes": 6,
+      "images": 3291
+    }
+  },
+  "sources_and_licenses": [
+    {
+      "name": "PlantVillage",
+      "url": "https://github.com/spMohanty/PlantVillage-Dataset",
+      "license": "Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)",
+      "crops": [
+        "Apple",
+        "Blueberry",
+        "Cherry_(including_sour)",
+        "Corn_(maize)",
+        "Grape",
+        "Orange",
+        "Peach",
+        "Pepper,_bell",
+        "Potato",
+        "Raspberry",
+        "Soybean",
+        "Squash",
+        "Strawberry",
+        "Tomato"
+      ],
+      "image_format": "JPEG / PNG (256x256 RGB)",
+      "notes": "Standard laboratory-acquired benchmark dataset with controlled background."
+    },
+    {
+      "name": "IRRI & Mendeley Paddy Disease Dataset",
+      "url": "https://data.mendeley.com/datasets/fw8275467c/1",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "crops": [
+        "Paddy"
+      ],
+      "image_format": "JPEG (In-field smartphone imagery)",
+      "notes": "Natural field lighting with high botanical fidelity across 10 rice conditions."
+    },
+    {
+      "name": "CIMMYT & Kaggle Wheat Rust Dataset",
+      "url": "https://www.kaggle.com/datasets/imsparsh/wheat-disease-dataset",
+      "license": "Open Data Commons Open Database License (ODbL) / Academic Use",
+      "crops": [
+        "Wheat"
+      ],
+      "image_format": "JPEG (Field imagery)",
+      "notes": "Includes stripe rust, leaf rust, stem rust, and septoria in cereal crops."
+    },
+    {
+      "name": "Andhra Focused Multi-Crop Disease Dataset",
+      "url": "https://www.kaggle.com/datasets/surajkumar/andhra-focused-multi-crop-disease-dataset",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "crops": [
+        "Banana",
+        "Chilli",
+        "Cotton",
+        "Mango",
+        "Turmeric",
+        "Palm"
+      ],
+      "image_format": "JPEG (Field and farm condition photos)",
+      "notes": "Curated agricultural imagery representing high-priority crops in Southern & Eastern India."
+    }
+  ],
+  "classes": [
+    {
+      "class_id": 0,
+      "class_name": "Apple___Apple_scab",
+      "crop": "Apple",
+      "condition": "Apple_scab",
+      "sample_counts": {
+        "train": 504,
+        "val": 63,
+        "test": 63,
+        "total": 630
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 1,
+      "class_name": "Apple___Black_rot",
+      "crop": "Apple",
+      "condition": "Black_rot",
+      "sample_counts": {
+        "train": 496,
+        "val": 62,
+        "test": 63,
+        "total": 621
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 2,
+      "class_name": "Apple___Cedar_apple_rust",
+      "crop": "Apple",
+      "condition": "Cedar_apple_rust",
+      "sample_counts": {
+        "train": 220,
+        "val": 27,
+        "test": 28,
+        "total": 275
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 3,
+      "class_name": "Apple___healthy",
+      "crop": "Apple",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 1316,
+        "val": 164,
+        "test": 165,
+        "total": 1645
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 4,
+      "class_name": "Banana___black_sigatoka",
+      "crop": "Banana",
+      "condition": "black_sigatoka",
+      "sample_counts": {
+        "train": 400,
+        "val": 49,
+        "test": 51,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 5,
+      "class_name": "Banana___cordana_leaf_spot",
+      "crop": "Banana",
+      "condition": "cordana_leaf_spot",
+      "sample_counts": {
+        "train": 274,
+        "val": 34,
+        "test": 34,
+        "total": 342
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 6,
+      "class_name": "Banana___healthy",
+      "crop": "Banana",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 400,
+        "val": 49,
+        "test": 51,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 7,
+      "class_name": "Banana___panama_disease",
+      "crop": "Banana",
+      "condition": "panama_disease",
+      "sample_counts": {
+        "train": 400,
+        "val": 49,
+        "test": 51,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 8,
+      "class_name": "Blueberry___healthy",
+      "crop": "Blueberry",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 1201,
+        "val": 150,
+        "test": 151,
+        "total": 1502
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 9,
+      "class_name": "Cherry_(including_sour)___Powdery_mildew",
+      "crop": "Cherry_(including_sour)",
+      "condition": "Powdery_mildew",
+      "sample_counts": {
+        "train": 841,
+        "val": 105,
+        "test": 106,
+        "total": 1052
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 10,
+      "class_name": "Cherry_(including_sour)___healthy",
+      "crop": "Cherry_(including_sour)",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 683,
+        "val": 85,
+        "test": 86,
+        "total": 854
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 11,
+      "class_name": "Chilli___anthracnose",
+      "crop": "Chilli",
+      "condition": "anthracnose",
+      "sample_counts": {
+        "train": 372,
+        "val": 46,
+        "test": 47,
+        "total": 465
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 12,
+      "class_name": "Chilli___damping_off",
+      "crop": "Chilli",
+      "condition": "damping_off",
+      "sample_counts": {
+        "train": 135,
+        "val": 16,
+        "test": 17,
+        "total": 168
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 13,
+      "class_name": "Chilli___healthy",
+      "crop": "Chilli",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 241,
+        "val": 29,
+        "test": 30,
+        "total": 300
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 14,
+      "class_name": "Chilli___leaf_curl_virus",
+      "crop": "Chilli",
+      "condition": "leaf_curl_virus",
+      "sample_counts": {
+        "train": 392,
+        "val": 48,
+        "test": 50,
+        "total": 490
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 15,
+      "class_name": "Chilli___leaf_spot",
+      "crop": "Chilli",
+      "condition": "leaf_spot",
+      "sample_counts": {
+        "train": 392,
+        "val": 49,
+        "test": 49,
+        "total": 490
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 16,
+      "class_name": "Chilli___veinal_mottle_virus",
+      "crop": "Chilli",
+      "condition": "veinal_mottle_virus",
+      "sample_counts": {
+        "train": 387,
+        "val": 46,
+        "test": 57,
+        "total": 490
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 17,
+      "class_name": "Chilli___whitefly_damage",
+      "crop": "Chilli",
+      "condition": "whitefly_damage",
+      "sample_counts": {
+        "train": 392,
+        "val": 48,
+        "test": 50,
+        "total": 490
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 18,
+      "class_name": "Chilli___yellowing_deficiency",
+      "crop": "Chilli",
+      "condition": "yellowing_deficiency",
+      "sample_counts": {
+        "train": 396,
+        "val": 45,
+        "test": 49,
+        "total": 490
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 19,
+      "class_name": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "crop": "Corn_(maize)",
+      "condition": "Cercospora_leaf_spot Gray_leaf_spot",
+      "sample_counts": {
+        "train": 410,
+        "val": 51,
+        "test": 52,
+        "total": 513
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 20,
+      "class_name": "Corn_(maize)___Common_rust_",
+      "crop": "Corn_(maize)",
+      "condition": "Common_rust_",
+      "sample_counts": {
+        "train": 953,
+        "val": 119,
+        "test": 120,
+        "total": 1192
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 21,
+      "class_name": "Corn_(maize)___Northern_Leaf_Blight",
+      "crop": "Corn_(maize)",
+      "condition": "Northern_Leaf_Blight",
+      "sample_counts": {
+        "train": 788,
+        "val": 98,
+        "test": 99,
+        "total": 985
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 22,
+      "class_name": "Corn_(maize)___healthy",
+      "crop": "Corn_(maize)",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 929,
+        "val": 116,
+        "test": 117,
+        "total": 1162
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 23,
+      "class_name": "Cotton___alternaria_leaf_spot",
+      "crop": "Cotton",
+      "condition": "alternaria_leaf_spot",
+      "sample_counts": {
+        "train": 400,
+        "val": 50,
+        "test": 50,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 24,
+      "class_name": "Cotton___bacterial_blight",
+      "crop": "Cotton",
+      "condition": "bacterial_blight",
+      "sample_counts": {
+        "train": 400,
+        "val": 50,
+        "test": 50,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 25,
+      "class_name": "Cotton___fusarium_wilt",
+      "crop": "Cotton",
+      "condition": "fusarium_wilt",
+      "sample_counts": {
+        "train": 400,
+        "val": 50,
+        "test": 50,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 26,
+      "class_name": "Cotton___healthy",
+      "crop": "Cotton",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 400,
+        "val": 50,
+        "test": 50,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 27,
+      "class_name": "Cotton___verticillium_wilt",
+      "crop": "Cotton",
+      "condition": "verticillium_wilt",
+      "sample_counts": {
+        "train": 400,
+        "val": 50,
+        "test": 50,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 28,
+      "class_name": "Grape___Black_rot",
+      "crop": "Grape",
+      "condition": "Black_rot",
+      "sample_counts": {
+        "train": 944,
+        "val": 118,
+        "test": 118,
+        "total": 1180
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 29,
+      "class_name": "Grape___Esca_(Black_Measles)",
+      "crop": "Grape",
+      "condition": "Esca_(Black_Measles)",
+      "sample_counts": {
+        "train": 1107,
+        "val": 138,
+        "test": 139,
+        "total": 1384
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 30,
+      "class_name": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "crop": "Grape",
+      "condition": "Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "sample_counts": {
+        "train": 860,
+        "val": 107,
+        "test": 109,
+        "total": 1076
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 31,
+      "class_name": "Grape___healthy",
+      "crop": "Grape",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 338,
+        "val": 42,
+        "test": 43,
+        "total": 423
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 32,
+      "class_name": "Mango___anthracnose",
+      "crop": "Mango",
+      "condition": "anthracnose",
+      "sample_counts": {
+        "train": 397,
+        "val": 50,
+        "test": 53,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 33,
+      "class_name": "Mango___bacterial_canker",
+      "crop": "Mango",
+      "condition": "bacterial_canker",
+      "sample_counts": {
+        "train": 400,
+        "val": 50,
+        "test": 50,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 34,
+      "class_name": "Mango___cutting_weevil",
+      "crop": "Mango",
+      "condition": "cutting_weevil",
+      "sample_counts": {
+        "train": 402,
+        "val": 49,
+        "test": 49,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 35,
+      "class_name": "Mango___die_back",
+      "crop": "Mango",
+      "condition": "die_back",
+      "sample_counts": {
+        "train": 401,
+        "val": 49,
+        "test": 50,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 36,
+      "class_name": "Mango___gall_midge",
+      "crop": "Mango",
+      "condition": "gall_midge",
+      "sample_counts": {
+        "train": 400,
+        "val": 49,
+        "test": 51,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 37,
+      "class_name": "Mango___healthy",
+      "crop": "Mango",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 400,
+        "val": 50,
+        "test": 50,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 38,
+      "class_name": "Mango___powdery_mildew",
+      "crop": "Mango",
+      "condition": "powdery_mildew",
+      "sample_counts": {
+        "train": 400,
+        "val": 50,
+        "test": 50,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 39,
+      "class_name": "Mango___sooty_mould",
+      "crop": "Mango",
+      "condition": "sooty_mould",
+      "sample_counts": {
+        "train": 400,
+        "val": 50,
+        "test": 50,
+        "total": 500
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 40,
+      "class_name": "Orange___Haunglongbing_(Citrus_greening)",
+      "crop": "Orange",
+      "condition": "Haunglongbing_(Citrus_greening)",
+      "sample_counts": {
+        "train": 4405,
+        "val": 550,
+        "test": 552,
+        "total": 5507
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 41,
+      "class_name": "Paddy___bacterial_leaf_blight",
+      "crop": "Paddy",
+      "condition": "bacterial_leaf_blight",
+      "sample_counts": {
+        "train": 383,
+        "val": 47,
+        "test": 49,
+        "total": 479
+      },
+      "source_dataset": "IRRI & Mendeley Paddy Disease Dataset"
+    },
+    {
+      "class_id": 42,
+      "class_name": "Paddy___bacterial_leaf_streak",
+      "crop": "Paddy",
+      "condition": "bacterial_leaf_streak",
+      "sample_counts": {
+        "train": 304,
+        "val": 38,
+        "test": 38,
+        "total": 380
+      },
+      "source_dataset": "IRRI & Mendeley Paddy Disease Dataset"
+    },
+    {
+      "class_id": 43,
+      "class_name": "Paddy___bacterial_panicle_blight",
+      "crop": "Paddy",
+      "condition": "bacterial_panicle_blight",
+      "sample_counts": {
+        "train": 269,
+        "val": 33,
+        "test": 35,
+        "total": 337
+      },
+      "source_dataset": "IRRI & Mendeley Paddy Disease Dataset"
+    },
+    {
+      "class_id": 44,
+      "class_name": "Paddy___blast",
+      "crop": "Paddy",
+      "condition": "blast",
+      "sample_counts": {
+        "train": 1390,
+        "val": 173,
+        "test": 175,
+        "total": 1738
+      },
+      "source_dataset": "IRRI & Mendeley Paddy Disease Dataset"
+    },
+    {
+      "class_id": 45,
+      "class_name": "Paddy___brown_spot",
+      "crop": "Paddy",
+      "condition": "brown_spot",
+      "sample_counts": {
+        "train": 772,
+        "val": 96,
+        "test": 97,
+        "total": 965
+      },
+      "source_dataset": "IRRI & Mendeley Paddy Disease Dataset"
+    },
+    {
+      "class_id": 46,
+      "class_name": "Paddy___dead_heart",
+      "crop": "Paddy",
+      "condition": "dead_heart",
+      "sample_counts": {
+        "train": 1153,
+        "val": 144,
+        "test": 145,
+        "total": 1442
+      },
+      "source_dataset": "IRRI & Mendeley Paddy Disease Dataset"
+    },
+    {
+      "class_id": 47,
+      "class_name": "Paddy___downy_mildew",
+      "crop": "Paddy",
+      "condition": "downy_mildew",
+      "sample_counts": {
+        "train": 496,
+        "val": 62,
+        "test": 62,
+        "total": 620
+      },
+      "source_dataset": "IRRI & Mendeley Paddy Disease Dataset"
+    },
+    {
+      "class_id": 48,
+      "class_name": "Paddy___hispa",
+      "crop": "Paddy",
+      "condition": "hispa",
+      "sample_counts": {
+        "train": 1275,
+        "val": 159,
+        "test": 160,
+        "total": 1594
+      },
+      "source_dataset": "IRRI & Mendeley Paddy Disease Dataset"
+    },
+    {
+      "class_id": 49,
+      "class_name": "Paddy___normal",
+      "crop": "Paddy",
+      "condition": "normal",
+      "sample_counts": {
+        "train": 1411,
+        "val": 176,
+        "test": 177,
+        "total": 1764
+      },
+      "source_dataset": "IRRI & Mendeley Paddy Disease Dataset"
+    },
+    {
+      "class_id": 50,
+      "class_name": "Paddy___tungro",
+      "crop": "Paddy",
+      "condition": "tungro",
+      "sample_counts": {
+        "train": 870,
+        "val": 108,
+        "test": 110,
+        "total": 1088
+      },
+      "source_dataset": "IRRI & Mendeley Paddy Disease Dataset"
+    },
+    {
+      "class_id": 51,
+      "class_name": "Palm___dryness",
+      "crop": "Palm",
+      "condition": "dryness",
+      "sample_counts": {
+        "train": 56,
+        "val": 7,
+        "test": 7,
+        "total": 70
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 52,
+      "class_name": "Palm___fungal_disease",
+      "crop": "Palm",
+      "condition": "fungal_disease",
+      "sample_counts": {
+        "train": 20,
+        "val": 2,
+        "test": 3,
+        "total": 25
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 53,
+      "class_name": "Palm___magnesium_deficiency",
+      "crop": "Palm",
+      "condition": "magnesium_deficiency",
+      "sample_counts": {
+        "train": 47,
+        "val": 5,
+        "test": 7,
+        "total": 59
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 54,
+      "class_name": "Palm___scale_insect",
+      "crop": "Palm",
+      "condition": "scale_insect",
+      "sample_counts": {
+        "train": 113,
+        "val": 14,
+        "test": 15,
+        "total": 142
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 55,
+      "class_name": "Peach___Bacterial_spot",
+      "crop": "Peach",
+      "condition": "Bacterial_spot",
+      "sample_counts": {
+        "train": 1837,
+        "val": 229,
+        "test": 231,
+        "total": 2297
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 56,
+      "class_name": "Peach___healthy",
+      "crop": "Peach",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 288,
+        "val": 36,
+        "test": 36,
+        "total": 360
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 57,
+      "class_name": "Pepper,_bell___Bacterial_spot",
+      "crop": "Pepper,_bell",
+      "condition": "Bacterial_spot",
+      "sample_counts": {
+        "train": 797,
+        "val": 99,
+        "test": 101,
+        "total": 997
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 58,
+      "class_name": "Pepper,_bell___healthy",
+      "crop": "Pepper,_bell",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 1182,
+        "val": 147,
+        "test": 149,
+        "total": 1478
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 59,
+      "class_name": "Potato___Early_blight",
+      "crop": "Potato",
+      "condition": "Early_blight",
+      "sample_counts": {
+        "train": 800,
+        "val": 100,
+        "test": 100,
+        "total": 1000
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 60,
+      "class_name": "Potato___Late_blight",
+      "crop": "Potato",
+      "condition": "Late_blight",
+      "sample_counts": {
+        "train": 800,
+        "val": 100,
+        "test": 100,
+        "total": 1000
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 61,
+      "class_name": "Potato___healthy",
+      "crop": "Potato",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 121,
+        "val": 15,
+        "test": 16,
+        "total": 152
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 62,
+      "class_name": "Raspberry___healthy",
+      "crop": "Raspberry",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 296,
+        "val": 37,
+        "test": 38,
+        "total": 371
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 63,
+      "class_name": "Soybean___healthy",
+      "crop": "Soybean",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 4072,
+        "val": 509,
+        "test": 509,
+        "total": 5090
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 64,
+      "class_name": "Squash___Powdery_mildew",
+      "crop": "Squash",
+      "condition": "Powdery_mildew",
+      "sample_counts": {
+        "train": 1468,
+        "val": 183,
+        "test": 184,
+        "total": 1835
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 65,
+      "class_name": "Strawberry___Leaf_scorch",
+      "crop": "Strawberry",
+      "condition": "Leaf_scorch",
+      "sample_counts": {
+        "train": 887,
+        "val": 110,
+        "test": 112,
+        "total": 1109
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 66,
+      "class_name": "Strawberry___healthy",
+      "crop": "Strawberry",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 364,
+        "val": 45,
+        "test": 47,
+        "total": 456
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 67,
+      "class_name": "Tomato___Bacterial_spot",
+      "crop": "Tomato",
+      "condition": "Bacterial_spot",
+      "sample_counts": {
+        "train": 1701,
+        "val": 212,
+        "test": 214,
+        "total": 2127
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 68,
+      "class_name": "Tomato___Early_blight",
+      "crop": "Tomato",
+      "condition": "Early_blight",
+      "sample_counts": {
+        "train": 800,
+        "val": 100,
+        "test": 100,
+        "total": 1000
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 69,
+      "class_name": "Tomato___Late_blight",
+      "crop": "Tomato",
+      "condition": "Late_blight",
+      "sample_counts": {
+        "train": 1527,
+        "val": 190,
+        "test": 192,
+        "total": 1909
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 70,
+      "class_name": "Tomato___Leaf_Mold",
+      "crop": "Tomato",
+      "condition": "Leaf_Mold",
+      "sample_counts": {
+        "train": 761,
+        "val": 95,
+        "test": 96,
+        "total": 952
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 71,
+      "class_name": "Tomato___Septoria_leaf_spot",
+      "crop": "Tomato",
+      "condition": "Septoria_leaf_spot",
+      "sample_counts": {
+        "train": 1416,
+        "val": 177,
+        "test": 178,
+        "total": 1771
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 72,
+      "class_name": "Tomato___Spider_mites Two-spotted_spider_mite",
+      "crop": "Tomato",
+      "condition": "Spider_mites Two-spotted_spider_mite",
+      "sample_counts": {
+        "train": 1340,
+        "val": 167,
+        "test": 169,
+        "total": 1676
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 73,
+      "class_name": "Tomato___Target_Spot",
+      "crop": "Tomato",
+      "condition": "Target_Spot",
+      "sample_counts": {
+        "train": 1123,
+        "val": 140,
+        "test": 141,
+        "total": 1404
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 74,
+      "class_name": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+      "crop": "Tomato",
+      "condition": "Tomato_Yellow_Leaf_Curl_Virus",
+      "sample_counts": {
+        "train": 4285,
+        "val": 535,
+        "test": 537,
+        "total": 5357
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 75,
+      "class_name": "Tomato___Tomato_mosaic_virus",
+      "crop": "Tomato",
+      "condition": "Tomato_mosaic_virus",
+      "sample_counts": {
+        "train": 298,
+        "val": 37,
+        "test": 38,
+        "total": 373
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 76,
+      "class_name": "Tomato___healthy",
+      "crop": "Tomato",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 1272,
+        "val": 159,
+        "test": 160,
+        "total": 1591
+      },
+      "source_dataset": "PlantVillage"
+    },
+    {
+      "class_id": 77,
+      "class_name": "Turmeric___dry_leaf",
+      "crop": "Turmeric",
+      "condition": "dry_leaf",
+      "sample_counts": {
+        "train": 162,
+        "val": 20,
+        "test": 21,
+        "total": 203
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 78,
+      "class_name": "Turmeric___healthy",
+      "crop": "Turmeric",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 157,
+        "val": 19,
+        "test": 21,
+        "total": 197
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 79,
+      "class_name": "Turmeric___leaf_blotch",
+      "crop": "Turmeric",
+      "condition": "leaf_blotch",
+      "sample_counts": {
+        "train": 159,
+        "val": 19,
+        "test": 21,
+        "total": 199
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 80,
+      "class_name": "Turmeric___rhizome_rot",
+      "crop": "Turmeric",
+      "condition": "rhizome_rot",
+      "sample_counts": {
+        "train": 144,
+        "val": 18,
+        "test": 20,
+        "total": 182
+      },
+      "source_dataset": "Andhra Focused Multi-Crop Disease Dataset"
+    },
+    {
+      "class_id": 81,
+      "class_name": "Wheat___healthy",
+      "crop": "Wheat",
+      "condition": "healthy",
+      "sample_counts": {
+        "train": 400,
+        "val": 60,
+        "test": 60,
+        "total": 520
+      },
+      "source_dataset": "CIMMYT & Kaggle Wheat Rust Dataset"
+    },
+    {
+      "class_id": 82,
+      "class_name": "Wheat___leaf_rust",
+      "crop": "Wheat",
+      "condition": "leaf_rust",
+      "sample_counts": {
+        "train": 400,
+        "val": 104,
+        "test": 104,
+        "total": 608
+      },
+      "source_dataset": "CIMMYT & Kaggle Wheat Rust Dataset"
+    },
+    {
+      "class_id": 83,
+      "class_name": "Wheat___powdery_mildew",
+      "crop": "Wheat",
+      "condition": "powdery_mildew",
+      "sample_counts": {
+        "train": 400,
+        "val": 36,
+        "test": 36,
+        "total": 472
+      },
+      "source_dataset": "CIMMYT & Kaggle Wheat Rust Dataset"
+    },
+    {
+      "class_id": 84,
+      "class_name": "Wheat___septoria",
+      "crop": "Wheat",
+      "condition": "septoria",
+      "sample_counts": {
+        "train": 400,
+        "val": 25,
+        "test": 25,
+        "total": 450
+      },
+      "source_dataset": "CIMMYT & Kaggle Wheat Rust Dataset"
+    },
+    {
+      "class_id": 85,
+      "class_name": "Wheat___stem_rust",
+      "crop": "Wheat",
+      "condition": "stem_rust",
+      "sample_counts": {
+        "train": 400,
+        "val": 109,
+        "test": 110,
+        "total": 619
+      },
+      "source_dataset": "CIMMYT & Kaggle Wheat Rust Dataset"
+    },
+    {
+      "class_id": 86,
+      "class_name": "Wheat___yellow_rust",
+      "crop": "Wheat",
+      "condition": "yellow_rust",
+      "sample_counts": {
+        "train": 400,
+        "val": 111,
+        "test": 111,
+        "total": 622
+      },
+      "source_dataset": "CIMMYT & Kaggle Wheat Rust Dataset"
+    }
+  ]
+}

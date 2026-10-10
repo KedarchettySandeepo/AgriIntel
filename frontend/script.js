@@ -58,13 +58,13 @@ const SAMPLES = {
 
 const I18N = {
     en: {
-        brandSubtitle: "v4.2 • 54 Classes",
+        brandSubtitle: "v5.0 • 87 Classes",
         heroBadge: "AI-POWERED AGRICULTURAL INTELLIGENCE",
         heroTitle: "Understand Your Crop.",
         heroTitleHighlight: "Protect Your Harvest.",
-        heroSubtitle: "Upload a high-resolution leaf photograph to detect crop conditions across 54 trained classes. Get instant statistical predictions, verified botanical symptoms, next-step recommendations, and live agricultural extension research.",
+        heroSubtitle: "Upload a high-resolution leaf photograph to detect crop conditions across 87 trained classes and 22 crops. Get instant statistical predictions, verified botanical symptoms, next-step recommendations, and live agricultural extension research.",
         startDiagnosis: "🌿 Start Crop Diagnosis",
-        exploreLibrary: "📚 Browse 54 Disease Classes",
+        exploreLibrary: "📚 Browse 87 Disease Classes",
         dropzonePrompt: "Drag & Drop Leaf Photo Here",
         dropzoneSubtext: "or browse from your device (JPG, PNG, WebP up to 15MB)",
         choosePhoto: "📁 Choose Photo",
@@ -82,13 +82,13 @@ const I18N = {
         searchPrompt: "Search Agricultural Intelligence"
     },
     hi: {
-        brandSubtitle: "संस्करण 4.2 • 54 श्रेणियां",
+        brandSubtitle: "संस्करण 5.0 • 87 श्रेणियां",
         heroBadge: "एआई-संचालित कृषि आसूचना",
         heroTitle: "अपनी फसल को समझें।",
         heroTitleHighlight: "अपनी उपज की रक्षा करें।",
-        heroSubtitle: "54 प्रशिक्षित श्रेणियों में फसल की स्थिति पहचानने के लिए पत्ती की स्पष्ट तस्वीर अपलोड करें। तुरंत सांख्यिकीय भविष्यवाणी, सत्यापित वानस्पतिक लक्षण, अगले कदम और कृषि अनुसंधान प्राप्त करें।",
+        heroSubtitle: "87 प्रशिक्षित श्रेणियों एवं 22 फसलों में फसल की स्थिति पहचानने के लिए पत्ती की स्पष्ट तस्वीर अपलोड करें। तुरंत सांख्यिकीय भविष्यवाणी, सत्यापित वानस्पतिक लक्षण, अगले कदम और कृषि अनुसंधान प्राप्त करें।",
         startDiagnosis: "🌿 फसल रोग पहचान शुरू करें",
-        exploreLibrary: "📚 54 रोग पुस्तकालय देखें",
+        exploreLibrary: "📚 87 रोग पुस्तकालय देखें",
         dropzonePrompt: "पत्ती की तस्वीर यहां खींचें और छोड़ें",
         dropzoneSubtext: "या अपने डिवाइस से चुनें (JPG, PNG, WebP अधिकतम 15MB)",
         choosePhoto: "📁 तस्वीर चुनें",
@@ -106,13 +106,13 @@ const I18N = {
         searchPrompt: "कृषि संदर्भ खोजें"
     },
     or: {
-        brandSubtitle: "ସଂସ୍କରଣ 4.2 • 54 ବର୍ଗ",
+        brandSubtitle: "ସଂସ୍କରଣ 5.0 • 87 ବର୍ଗ",
         heroBadge: "AI-ସଞ୍ଚାଳିତ କୃଷି ବୁଦ୍ଧିମତା",
         heroTitle: "ନିଜ ଫସଲକୁ ବୁଝନ୍ତୁ।",
         heroTitleHighlight: "ନିଜ ଅମଳକୁ ସୁରକ୍ଷିତ ରଖନ୍ତୁ।",
-        heroSubtitle: "୫୪ଟି ପ୍ରଶିକ୍ଷିତ ବର୍ଗରେ ଫସଲ ରୋଗ ଚିହ୍ନଟ କରିବା ପାଇଁ ପତ୍ରର ସ୍ପଷ୍ଟ ଛବି ଅପଲୋଡ କରନ୍ତୁ। ତୁରନ୍ତ ପୂର୍ବାନୁମାନ, ଲକ୍ଷଣ ଏବଂ ପରିଚାଳନା ପରାମର୍ଶ ପାଆନ୍ତୁ।",
+        heroSubtitle: "୮୭ଟି ପ୍ରଶିକ୍ଷିତ ବର୍ଗ ଏବଂ ୨୨ଟି ଫସଲରେ ରୋଗ ଚିହ୍ନଟ କରିବା ପାଇଁ ପତ୍ରର ସ୍ପଷ୍ଟ ଛବି ଅପଲୋଡ କରନ୍ତୁ। ତୁରନ୍ତ ପୂର୍ବାନୁମାନ, ଲକ୍ଷଣ ଏବଂ ପରିଚାଳନା ପରାମର୍ଶ ପାଆନ୍ତୁ।",
         startDiagnosis: "🌿 ରୋଗ ଚିହ୍ନଟ ଆରମ୍ଭ କରନ୍ତୁ",
-        exploreLibrary: "📚 ୫୪ଟି ରୋଗ ତାଲିକା ଦେଖନ୍ତୁ",
+        exploreLibrary: "📚 ୮୭ଟି ରୋଗ ତାଲିକା ଦେଖନ୍ତୁ",
         dropzonePrompt: "ପତ୍ରର ଛବି ଏଠାରେ ଛାଡ଼ନ୍ତୁ",
         dropzoneSubtext: "କିମ୍ବା ଡିଭାଇସରୁ ବାଛନ୍ତୁ (JPG, PNG, WebP ସର୍ବାଧିକ 15MB)",
         choosePhoto: "📁 ଛବି ବାଛନ୍ତୁ",

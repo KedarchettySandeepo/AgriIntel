@@ -16,19 +16,33 @@ from ultralytics import YOLO
 BASE_DIR = Path(__file__).resolve().parent.parent
 FRONTEND_DIR = BASE_DIR / "frontend"
 
-# Model path: check standard models directory first, fallback to runs directory
-PRIMARY_MODEL_PATH = BASE_DIR / "models" / "best.pt"
-FALLBACK_MODEL_PATH = (
-    BASE_DIR
-    / "runs"
-    / "classify"
-    / "runs"
-    / "classify"
-    / "crop_disease_classifier_v4-2"
-    / "weights"
-    / "best.pt"
-)
-MODEL_PATH = PRIMARY_MODEL_PATH if PRIMARY_MODEL_PATH.exists() else FALLBACK_MODEL_PATH
+# Model path: Support configurable environment variable AGRIINTEL_MODEL_PATH
+# with safe fallback cascade:
+# 1. Environment variable AGRIINTEL_MODEL_PATH
+# 2. models/best_v5.pt
+# 3. runs/classify/crop_disease_classifier_v5_run1/weights/best.pt
+# 4. models/best.pt (original working 54-class baseline)
+# 5. runs/classify/runs/classify/crop_disease_classifier_v4-2/weights/best.pt
+env_model_path = os.environ.get("AGRIINTEL_MODEL_PATH")
+if env_model_path and Path(env_model_path).exists():
+    MODEL_PATH = Path(env_model_path)
+elif (BASE_DIR / "models" / "best_v5.pt").exists():
+    MODEL_PATH = BASE_DIR / "models" / "best_v5.pt"
+elif (BASE_DIR / "runs" / "classify" / "crop_disease_classifier_v5_run1" / "weights" / "best.pt").exists():
+    MODEL_PATH = BASE_DIR / "runs" / "classify" / "crop_disease_classifier_v5_run1" / "weights" / "best.pt"
+elif (BASE_DIR / "models" / "best.pt").exists():
+    MODEL_PATH = BASE_DIR / "models" / "best.pt"
+else:
+    MODEL_PATH = (
+        BASE_DIR
+        / "runs"
+        / "classify"
+        / "runs"
+        / "classify"
+        / "crop_disease_classifier_v4-2"
+        / "weights"
+        / "best.pt"
+    )
 
 # Import helper modules
 sys.path.insert(0, str(BASE_DIR))
@@ -140,8 +154,8 @@ PRELIMINARY_DISCLAIMER = (
 )
 
 REJECTION_MESSAGE_UNSUPPORTED = (
-    "This image may belong to a crop or condition outside the model's 16 supported classes "
-    "(such as Cotton, Chilli, Groundnut, Mango, Banana, or Pigeon pea). "
+    f"This image may belong to a crop or condition outside the model's {len(SUPPORTED_CROPS)} vision-supported crops "
+    f"(such as {', '.join(UNSUPPORTED_CROPS_EXAMPLES[:5])}). "
     "Please upload a clearer leaf image of a supported crop, or consult a local agricultural extension officer."
 )
 
@@ -368,19 +382,29 @@ def diagnose():
 
     if is_hint_expanded:
         is_uncertain = True
-        rejection_reason = f"Crop '{hint_matched_name}' is in Knowledge Base & Search; vision model v5 training is queued."
+        rejection_reason = f"Crop '{hint_matched_name}' is in Knowledge Base & Search; image-based vision detection is queued."
         rejection_message = (
             f"Notice: '{hint_matched_name}' is available in AgriIntel's Knowledge Base & Live Agricultural Search ({len(DISEASE_KNOWLEDGE)} conditions across {len(ALL_KNOWLEDGE_CROPS)} crops). "
-            f"However, image-based neural detection for {hint_matched_name} is currently queued in the v5 training pipeline. "
-            f"The v4.2 vision model was trained on 16 crops (Apple, Blueberry, Cherry, Corn, Grape, Orange, Paddy, Peach, Bell Pepper, Potato, Raspberry, Soybean, Squash, Strawberry, Tomato, Wheat)."
+            f"However, image-based neural detection for {hint_matched_name} is currently queued for future public dataset acquisition. "
+            f"The neural vision model supports {len(SUPPORTED_CROPS)} crops ({', '.join(SUPPORTED_CROPS)})."
         )
     elif is_hint_unsupported:
         is_uncertain = True
         rejection_reason = f"Crop '{hint_matched_name}' is not supported by the model."
         rejection_message = (
-            f"Notice: '{hint_matched_name}' is outside AgriIntel's current 16 vision-supported crops. "
+            f"Notice: '{hint_matched_name}' is outside AgriIntel's {len(SUPPORTED_CROPS)} vision-supported crops. "
             f"Please consult a local agricultural officer or KVK for {hint_matched_name} diagnosis."
         )
+    elif crop_hint and crop_hint.lower() not in {"auto", "auto-detect", ""} and not is_hint_expanded and not is_hint_unsupported:
+        # Check for mismatch between user crop hint and model predicted crop
+        if crop_hint.lower() not in primary_crop.lower() and primary_crop.lower() not in crop_hint.lower():
+            is_uncertain = True
+            rejection_reason = f"Crop hint '{crop_hint}' does not match predicted crop '{crop_display}'."
+            rejection_message = (
+                f"Notice: You indicated crop '{crop_hint}', but computer vision diagnosed this sample as '{crop_display}' "
+                f"({condition_display}, {confidence_pct}% confidence). "
+                f"Please verify crop identity before applying crop-specific remedies."
+            )
     elif top1_confidence < 0.45:
         is_uncertain = True
         rejection_reason = "Low model confidence (< 45%)."

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="theme-color" content="#15803d">
-    <meta name="description" content="AgriIntel: Upload a leaf photo for instant AI crop disease detection across 54 classes.">
+    <meta name="description" content="AgriIntel: Upload a leaf photo for instant AI crop disease detection across 87 classes and 22 crops.">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <title>AgriIntel &#8212; AI Crop Disease Detection</title>
+    <title>AgriIntel &#8212; Multi-Crop AI Disease Detection</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     <a href="#diagnoseSection" class="logo" id="brandLogo" aria-label="AgriIntel Home">
       <span class="logo-icon">&#127807;</span>
       <span class="logo-text">AgriIntel</span>
-      <span class="logo-badge" id="modelBadge">v4.2 AI</span>
+      <span class="logo-badge" id="modelBadge">v5.0 AI</span>
     </a>
     <nav class="nav-links" id="navLinks" aria-label="Primary Navigation">
       <a href="#diagnoseSection" class="nav-link active" id="navDiagnose">Diagnose</a>
@@ -68,7 +68,7 @@
         <span class="text-gradient" id="heroTitleHighlight">Instantly.</span>
       </h1>
       <p class="hero-subtitle" id="heroSubtitle">
-        Upload a leaf photo &#8212; our AI detects diseases across 54 trained classes in seconds.
+        Upload a leaf photo &#8212; our AI detects diseases across 87 trained classes in seconds.
       </p>
 
       <div class="upload-studio" id="uploadCard">
@@ -99,14 +99,19 @@
             <label for="cropHintSelect" id="cropHintLabel">Crop Hint (optional)</label>
             <select id="cropHintSelect" class="form-select">
               <option value="" selected>Auto-detect</option>
-              <optgroup label="Supported Crops - AI Vision (54 classes)">
+              <optgroup label="Supported Crops - AI Vision (87 classes across 22 crops)">
                 <option value="Apple">Apple</option>
+                <option value="Banana">Banana</option>
                 <option value="Blueberry">Blueberry</option>
                 <option value="Cherry">Cherry</option>
+                <option value="Chilli">Chilli</option>
                 <option value="Corn">Corn / Maize</option>
+                <option value="Cotton">Cotton</option>
                 <option value="Grape">Grape</option>
+                <option value="Mango">Mango</option>
                 <option value="Orange">Orange / Citrus</option>
                 <option value="Paddy">Paddy / Rice</option>
+                <option value="Palm">Palm / Oil Palm</option>
                 <option value="Peach">Peach</option>
                 <option value="Pepper, bell">Bell Pepper</option>
                 <option value="Potato">Potato</option>
@@ -115,29 +120,25 @@
                 <option value="Squash">Squash</option>
                 <option value="Strawberry">Strawberry</option>
                 <option value="Tomato">Tomato</option>
+                <option value="Turmeric">Turmeric</option>
                 <option value="Wheat">Wheat</option>
               </optgroup>
-              <optgroup label="Knowledge + Search Only">
-                <option value="Banana">Banana</option>
+              <optgroup label="Candidate Crops (Knowledge Base &amp; Search)">
                 <option value="Black Pepper">Black Pepper</option>
                 <option value="Cardamom">Cardamom</option>
                 <option value="Cashew">Cashew</option>
-                <option value="Chilli">Chilli</option>
                 <option value="Coconut">Coconut</option>
                 <option value="Coffee">Coffee</option>
-                <option value="Cotton">Cotton</option>
                 <option value="Ginger">Ginger</option>
                 <option value="Groundnut">Groundnut</option>
-                <option value="Mango">Mango</option>
                 <option value="Mustard">Mustard</option>
                 <option value="Onion">Onion</option>
-                <option value="Palm">Palm</option>
                 <option value="Pigeon pea">Pigeon Pea</option>
                 <option value="Rubber">Rubber</option>
                 <option value="Sugarcane">Sugarcane</option>
                 <option value="Tea">Tea</option>
                 <option value="Tobacco">Tobacco</option>
-                <option value="Turmeric">Turmeric</option>
+              </optgroup>
               </optgroup>
             </select>
           </div>

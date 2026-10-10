@@ -1625,6 +1625,34 @@ DISEASE_KNOWLEDGE = {
             "Ensure regulated irrigation during critical flowering and boll development phases."
         ]
     },
+    "Cotton___Verticillium_Wilt": {
+        "crop": "Cotton",
+        "crop_display": "Cotton",
+        "condition": "Verticillium Wilt",
+        "pathogen": "Verticillium dahliae (Soil-borne Fungus)",
+        "is_healthy": False,
+        "model_trained_v5": True,
+        "severity": "High",
+        "description": "Verticillium wilt is a serious vascular wilt disease affecting cotton in temperate and subtropical climates. It causes interveinal chlorosis, vascular browning in stems, and sudden leaf shedding.",
+        "symptoms": [
+            "Mottled interveinal chlorosis creating a characteristic 'tiger-stripe' pattern on leaves.",
+            "Marginal necrosis and inward curling of lower canopy leaves, spreading upwards.",
+            "Dark brown to olive discoloration in the vascular ring when lower stems are split lengthwise.",
+            "Premature defoliation, stunted bolls, and partial or total plant collapse."
+        ],
+        "recommended_next_steps": [
+            "Split lower main stem to verify vascular xylem discoloration.",
+            "Remove and burn severely infected plants to prevent microsclerotia buildup in the soil.",
+            "Avoid deep inter-row cultivation that cuts feeder roots and facilitates fungal entry.",
+            "Consult agricultural extension or KVK for region-specific wilt-tolerant hybrid recommendations."
+        ],
+        "preventive_practices": [
+            "Rotate cotton with non-host graminaceous crops (corn, sorghum) for 3–4 seasons.",
+            "Plant wilt-tolerant Bt cotton varieties with high genetic resistance.",
+            "Incorporate bio-control agents (Trichoderma harzianum @ 5 kg/ha) into soil enriched with FYM.",
+            "Avoid excessive late-season irrigation and high nitrogen application."
+        ]
+    },
 
     # =============================================================
     # CHILLI / PEPPER (Expanded Knowledge Base - 4 Profiles)
@@ -1736,6 +1764,146 @@ DISEASE_KNOWLEDGE = {
             "Install yellow and blue sticky traps for early pest surveillance.",
             "Ensure balanced fertilization with calcium to prevent fruit blossom end rot.",
             "Follow integrated pest management (IPM) practices."
+        ]
+    },
+    "Chilli___Damping_Off": {
+        "crop": "Chilli",
+        "crop_display": "Chilli",
+        "condition": "Damping Off",
+        "pathogen": "Pythium aphanidermatum / Rhizoctonia solani (Fungi / Oomycetes)",
+        "is_healthy": False,
+        "model_trained_v5": True,
+        "severity": "Critical",
+        "description": "Damping off is a devastating nursery disease of chilli seedlings. It causes pre-emergence seed rot and post-emergence collar collapse, leading to rapid seedling toppling and severe nursery bed loss.",
+        "symptoms": [
+            "Water-soaked brownish soft rot at the seedling collar line near soil surface.",
+            "Constriction and shriveling of the lower hypocotyl stem.",
+            "Seedlings suddenly collapse, topple over, and rot in circular patches across nursery beds.",
+            "Stunted, yellowing seedlings with decayed primary tap roots."
+        ],
+        "recommended_next_steps": [
+            "Drench nursery beds immediately with copper oxychloride (0.25%) or metalaxyl-mancozeb.",
+            "Withhold excess nursery watering and improve seedbed drainage.",
+            "Carefully rogue out and destroy collapsed seedlings along with surrounding infested soil.",
+            "Consult local extension officer for bio-control drenching protocols."
+        ],
+        "preventive_practices": [
+            "Treat seeds before sowing with Trichoderma viride (@ 4 g/kg seed) or thiram / captan (@ 2.5 g/kg).",
+            "Prepare raised nursery beds (15 cm high) with compost to ensure rapid rainwater runoff.",
+            "Solarize nursery soil using clear transparent polyethylene sheets during peak summer for 4–6 weeks.",
+            "Avoid dense sowing; maintain adequate spacing between seedlings."
+        ]
+    },
+    "Chilli___Leaf_Spot": {
+        "crop": "Chilli",
+        "crop_display": "Chilli",
+        "condition": "Cercospora Leaf Spot (Frog-Eye)",
+        "pathogen": "Cercospora capsici (Fungus)",
+        "is_healthy": False,
+        "model_trained_v5": True,
+        "severity": "Moderate to High",
+        "description": "Cercospora leaf spot (frog-eye leaf spot) is a widespread fungal disease in chilli that infects leaves, stems, and petioles, resulting in premature leaf shedding and sunscald on unprotected fruit.",
+        "symptoms": [
+            "Small circular to oblong lesions with pale tan/white centers and dark brown to reddish margins.",
+            "Dark concentric rings giving the characteristic 'frog-eye' pattern on older foliage.",
+            "Central dead tissue dries out, becomes brittle, and may fall away creating shot-hole defects.",
+            "Severe infections trigger extensive leaf yellowing and complete premature defoliation."
+        ],
+        "recommended_next_steps": [
+            "Inspect lower and middle foliage weekly for frog-eye circular lesions.",
+            "Remove and destroy severely spotted lower leaves to reduce sporulation.",
+            "Apply protective fungicide sprays such as mancozeb (0.25%) or chlorothalonil.",
+            "Consult KVK or local horticulture officer for systemic spray options (tebuconazole / azoxystrobin)."
+        ],
+        "preventive_practices": [
+            "Use certified disease-free seeds from reputable agricultural sources.",
+            "Practice wider plant spacing (60 x 45 cm) to facilitate canopy aeration and rapid drying.",
+            "Avoid overhead sprinkler irrigation that splashes fungal conidia across adjacent plants.",
+            "Rotate plots with non-solanaceous crops (maize, pulses, oilseeds) for at least 2 seasons."
+        ]
+    },
+    "Chilli___Veinal_Mottle_Virus": {
+        "crop": "Chilli",
+        "crop_display": "Chilli",
+        "condition": "Chilli Veinal Mottle Virus (ChiVMV)",
+        "pathogen": "Chilli Veinal Mottle Virus (Potyvirus, vectored by Aphids)",
+        "is_healthy": False,
+        "model_trained_v5": True,
+        "severity": "High",
+        "description": "Chilli veinal mottle virus is a major aphid-transmitted viral disease affecting pepper crops across India. It creates dark green banding along main leaf veins and distinct mosaic mottling.",
+        "symptoms": [
+            "Dark green vein-banding along the primary veins contrasted against chlorotic yellowed tissue.",
+            "Light and dark green mosaic patterns and blister-like puckering across the leaf surface.",
+            "Stunted growth, shortened internodes, and bushy apical shoot architecture.",
+            "Deformed, reduced fruit with uneven ripening and unmarketable sunken spots."
+        ],
+        "recommended_next_steps": [
+            "Scout for aphid colonies (Aphis gossypii, Myzus persicae) on tender shoots and leaf undersides.",
+            "Rogue out and burn early symptomatic virus-infected plants to limit field spread.",
+            "Spray neem oil formulation (3%) or recommended aphicides (imidacloprid / thiamethoxam) to manage vectors.",
+            "Report suspected regional viral outbreaks to local agricultural extension."
+        ],
+        "preventive_practices": [
+            "Plant barrier border rows of tall crops (maize, sorghum, or pearl millet) around the chilli field.",
+            "Install yellow sticky traps (15–20 per acre) across the plot for early aphid vector detection.",
+            "Spray seedling nursery with neem seed kernel extract (NSKE 5%) prior to field transplanting.",
+            "Plant tolerant or resistant chilli hybrids recommended by ICAR-IIHR."
+        ]
+    },
+    "Chilli___Whitefly_Damage": {
+        "crop": "Chilli",
+        "crop_display": "Chilli",
+        "condition": "Whitefly Infestation & Feeding Damage",
+        "pathogen": "Bemisia tabaci (Insect Pest / Vector)",
+        "is_healthy": False,
+        "model_trained_v5": True,
+        "severity": "High",
+        "description": "Whitefly (Bemisia tabaci) is a critical phloem-feeding pest of chilli in tropical and subtropical regions. In addition to transmitting the devastating leaf curl virus, heavy feeding devitalizes plants.",
+        "symptoms": [
+            "Tiny white-winged insects actively flying when foliage is disturbed, clustering on leaf undersides.",
+            "Chlorotic yellow speckling and marginal leaf curling resulting from cell sap extraction.",
+            "Copious sticky honeydew excreted onto leaves, supporting black sooty mould growth.",
+            "General stunting, leaf drop, and poor fruit set due to reduced photosynthetic capacity."
+        ],
+        "recommended_next_steps": [
+            "Check the undersides of top tender leaves in early morning for whitefly adults and nymphs.",
+            "Erect yellow sticky sheets (15–20 per acre) at or slightly above the crop canopy height.",
+            "Apply botanical sprays (neem oil @ 5 ml/L or NSKE 5%) targeting leaf undersides.",
+            "Consult local agricultural expert for selective insecticides (diafenthiuron / spiromesifen / pyriproxyfen)."
+        ],
+        "preventive_practices": [
+            "Avoid excessive or unbalanced nitrogen application which promotes soft succulent vegetative growth.",
+            "Conserve natural predators including mirid bugs, chrysoperla, and predatory ladybird beetles.",
+            "Maintain weed-free borders by eradicating alternate weed hosts (Parthenium, Abutilon).",
+            "Grow 2–3 rows of pearl millet or sorghum as an insect barrier around the perimeter."
+        ]
+    },
+    "Chilli___Yellowing_Deficiency": {
+        "crop": "Chilli",
+        "crop_display": "Chilli",
+        "condition": "Leaf Yellowing & Micronutrient Deficiency",
+        "pathogen": "Abiotic / Nutritional Chlorosis (Nitrogen / Zinc / Iron Deficiency)",
+        "is_healthy": False,
+        "model_trained_v5": True,
+        "severity": "Moderate",
+        "description": "Non-pathogenic foliar chlorosis in chilli caused by macro- or micronutrient imbalances, root waterlogging, or alkaline soil locking. Plants exhibit diffuse yellowing without fungal fruiting bodies.",
+        "symptoms": [
+            "Uniform pale light-green to yellow coloration starting on older lower leaves (Nitrogen deficiency).",
+            "Interveinal chlorosis where veins remain green while interveinal areas turn pale yellow (Iron/Zinc).",
+            "Absence of water-soaked margins, concentric fungal rings, or insect webbing.",
+            "Gradual reduction in flowering and fruit size if left uncorrected."
+        ],
+        "recommended_next_steps": [
+            "Examine soil moisture to rule out temporary root asphyxiation from waterlogging.",
+            "Perform soil pH and electrical conductivity (EC) testing to identify nutrient lockout.",
+            "Apply a foliar spray of balanced 19:19:19 water-soluble NPK (0.5%) along with chelated micronutrients.",
+            "Consult your local Krishi Vigyan Kendra (KVK) for soil-test based fertilizer scheduling."
+        ],
+        "preventive_practices": [
+            "Incorporate well-rotted Farm Yard Manure (FYM @ 10–15 t/ha) or vermicompost during final field preparation.",
+            "Apply basal fertilizers based on soil health card recommendations rather than generic schedules.",
+            "Ensure ridge-and-furrow planting to guarantee root zone aeration during heavy rains.",
+            "Apply zinc sulphate (25 kg/ha) and borax (10 kg/ha) basally in deficient soils."
         ]
     },
 
@@ -1962,6 +2130,90 @@ DISEASE_KNOWLEDGE = {
             "Conduct center-opening pruning in winter to allow sunlight into the tree core.",
             "Maintain clean orchard basin and mulch with organic biomass.",
             "Follow integrated pest and disease management guidelines."
+        ]
+    },
+    "Mango___Cutting_Weevil": {
+        "crop": "Mango",
+        "crop_display": "Mango",
+        "condition": "Mango Leaf Cutting Weevil",
+        "pathogen": "Deporaus marginatus (Coleoptera: Attelabidae - Insect Pest)",
+        "is_healthy": False,
+        "model_trained_v5": True,
+        "severity": "Moderate to High",
+        "description": "The mango leaf cutting weevil is a serious chewing pest during vegetative flushes. Adult females excise tender young leaves cleanly across the blade near the petiole after laying eggs, leaving jagged stubs on terminal shoots.",
+        "symptoms": [
+            "Tender reddish or pale-green leaves cleanly severed across the blade as if cut with scissors.",
+            "Cut leaf pieces scattered on the ground beneath the tree canopy containing weevil eggs.",
+            "Ragged naked shoots with only basal leaf stumps remaining.",
+            "Stunted vegetative canopy expansion and delayed flowering flushes."
+        ],
+        "recommended_next_steps": [
+            "Collect and deeply bury or burn fallen severed leaf pieces to destroy developing larvae.",
+            "Rake and lightly turn basin soil beneath the canopy to expose pupating larvae to sunlight and predators.",
+            "Spray neem-based formulation (azadirachtin 10,000 ppm @ 2 ml/L) during tender leaf emergence.",
+            "Consult local horticulture officer for contact insecticide sprays (e.g. lambda-cyhalothrin) during heavy outbreaks."
+        ],
+        "preventive_practices": [
+            "Monitor new vegetative flushes closely during July–October post-monsoon emergence.",
+            "Avoid excessive late nitrogen fertilization that stimulates prolonged tender vegetative growth.",
+            "Conserve natural ground predators, including ants and carabid beetles.",
+            "Inter-plough orchard floor twice a year (pre-monsoon and post-monsoon) to destroy pupal cells."
+        ]
+    },
+    "Mango___Gall_Midge": {
+        "crop": "Mango",
+        "crop_display": "Mango",
+        "condition": "Mango Leaf Gall Midge (Blister Galls)",
+        "pathogen": "Procontarinia matteiana (Diptera: Cecidomyiidae - Insect Pest)",
+        "is_healthy": False,
+        "model_trained_v5": True,
+        "severity": "Moderate to High",
+        "description": "The mango gall midge is a tiny fly whose maggots induce circular, wart-like blister galls on leaf blades. Heavy infestation causes leaf curling, reduced photosynthesis, shot-hole formation, and premature defoliation.",
+        "symptoms": [
+            "Numerous raised, circular, pimple-like blister galls (1–3 mm) scattered across the leaf blade.",
+            "Galls start yellowish-green, turning reddish-brown and eventually black as larvae exit.",
+            "Leaves become curled, deformed, crinkled, and brittle in severe infestations.",
+            "Exit holes left in older galls, which rot or tear into irregular shot-holes under rain."
+        ],
+        "recommended_next_steps": [
+            "Prune heavily infested twigs during regular post-harvest orchard maintenance.",
+            "Spray systemic insecticide (such as dimethoate @ 2 ml/L or thiamethoxam) at the onset of new flushes before galls form.",
+            "Rake and expose tree basin soil to expose soil-pupating midge larvae.",
+            "Consult KVK or local horticulture university for regional midge advisory bulletins."
+        ],
+        "preventive_practices": [
+            "Conduct synchronized pruning across the orchard to avoid staggered, prolonged flush windows.",
+            "Conserve eulophid and platygastrid parasitic wasps that naturally regulate midge populations.",
+            "Apply neem cake to orchard basin soil during post-harvest manuring.",
+            "Mulch tree basins heavily with dry straw to inhibit midge larvae from penetrating the soil to pupate."
+        ]
+    },
+    "Mango___Sooty_Mould": {
+        "crop": "Mango",
+        "crop_display": "Mango",
+        "condition": "Sooty Mould",
+        "pathogen": "Capnodium mangiferae / Meliola mangiferae (Ascomycete Fungi)",
+        "is_healthy": False,
+        "model_trained_v5": True,
+        "severity": "Moderate to High",
+        "description": "Sooty mould is a non-parasitic superficial black fungal crust that grows on the sugary honeydew excreted by sap-sucking pests (mango hoppers, mealybugs, and scale insects). It obstructs sunlight and stunts tree vigor.",
+        "symptoms": [
+            "Thick, velvety, charcoal-black soot-like coating covering upper leaf surfaces, twigs, and fruit shoulders.",
+            "Black membrane peels off in dry papery flakes during dry, sunny weather.",
+            "Reduced photosynthesis causing leaf yellowing, poor flowering, and small tasteless fruits.",
+            "Presence of active sap-sucking hoppers (Amritodus atkinsoni) or white mealybug colonies."
+        ],
+        "recommended_next_steps": [
+            "Spray starch solution (1 kg maida / wheat flour boiled into 20 L water and diluted to 100 L) — as it dries, it flakes off the mold entirely.",
+            "Identify and spray the underlying sucking insect pests using imidacloprid (0.3 ml/L) or thiamethoxam.",
+            "Spray copper oxychloride (0.2%) after starch treatment to suppress residual superficial mycelia.",
+            "Prune interior criss-cross branches to improve ventilation and sunlight entry."
+        ],
+        "preventive_practices": [
+            "Control mango leafhoppers during pre-flowering flush stage before honeydew deposition starts.",
+            "Avoid dense tree planting; ensure regular annual pruning to keep the interior canopy open.",
+            "Sticky banding of tree trunks with grease to prevent ant movement that protects honeydew-producing scales.",
+            "Maintain clean orchard basins and eradicate weed hosts harboring sucking insect colonies."
         ]
     },
 
@@ -3609,15 +3861,20 @@ DISEASE_KNOWLEDGE = {
     }
 }
 
-# 16 Crops currently supported by the v4.2 YOLO Computer Vision Model
+# 22 Crops supported by the v5 YOLO Computer Vision Model
 VISION_MODEL_SUPPORTED_CROPS = [
     "Apple",
+    "Banana",
     "Blueberry",
     "Cherry (including sour)",
+    "Chilli",
     "Corn (maize)",
+    "Cotton",
     "Grape",
+    "Mango",
     "Orange",
     "Paddy",
+    "Palm",
     "Peach",
     "Pepper, bell",
     "Potato",
@@ -3626,31 +3883,26 @@ VISION_MODEL_SUPPORTED_CROPS = [
     "Squash",
     "Strawberry",
     "Tomato",
+    "Turmeric",
     "Wheat"
 ]
 
-# 20 Additional Crops available in the Knowledge Base & Live Search (v5 Training Candidates)
+# 14 Additional Crops available in the Knowledge Base & Live Search (Candidate Crops)
 EXPANDED_KNOWLEDGE_CROPS = [
-    "Banana",
     "Black Pepper",
     "Cardamom",
     "Cashew",
-    "Chilli",
     "Coconut",
     "Coffee",
-    "Cotton",
     "Ginger",
     "Groundnut",
-    "Mango",
     "Mustard",
     "Onion",
-    "Palm",
     "Pigeon pea",
     "Rubber",
     "Sugarcane",
     "Tea",
-    "Tobacco",
-    "Turmeric"
+    "Tobacco"
 ]
 
 # Complete set of crops available in the Knowledge Base (36 Total Crops)
@@ -3669,7 +3921,7 @@ UNSUPPORTED_CROPS_EXAMPLES = [
 ]
 
 def is_vision_model_supported(crop_name: str) -> bool:
-    """Check if a crop has an active trained vision model in v4.2."""
+    """Check if a crop has an active trained vision model."""
     if not crop_name:
         return False
     norm = crop_name.lower().replace("_", " ").strip()
