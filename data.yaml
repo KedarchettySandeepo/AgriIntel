@@ -1,0 +1,9 @@
+path: C:/Users/LOQ/Desktop/AI-Crop-Disease-Detector/dataset
+
+train: train/images
+val: val/images
+test: test/images
+
+names:
+  0: healthy
+  1: disease

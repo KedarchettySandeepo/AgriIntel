@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#15803d">
+    <meta name="description" content="AgriIntel: Upload a leaf photo for instant AI crop disease detection across 54 classes.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>AgriIntel &#8212; AI Crop Disease Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SLIM STICKY NAVBAR -->
+<header class="navbar" id="mainNavbar">
+  <div class="nav-container">
+    <a href="#diagnoseSection" class="logo" id="brandLogo" aria-label="AgriIntel Home">
+      <span class="logo-icon">&#127807;</span>
+      <span class="logo-text">AgriIntel</span>
+      <span class="logo-badge" id="modelBadge">v4.2 AI</span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary Navigation">
+      <a href="#diagnoseSection" class="nav-link active" id="navDiagnose">Diagnose</a>
+      <a href="#libraryPanel" class="nav-link" id="navLibrary" onclick="openLibrary(event)">Disease Library</a>
+      <a href="#aboutSection" class="nav-link" id="navAbout">About</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-selector-wrapper">
+        <span class="lang-icon" aria-hidden="true">&#127760;</span>
+        <select id="languageSelect" class="lang-select" aria-label="Select Interface Language">
+          <option value="en" selected>EN</option>
+          <option value="hi">&#2361;&#2367;&#2306;</option>
+          <option value="or">&#2871;&#2921;&#2952;</option>
+        </select>
+      </div>
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <a href="#diagnoseSection" class="mobile-nav-link" onclick="closeDrawer()">&#128269; Diagnose Crop</a>
+    <a href="#" class="mobile-nav-link" onclick="openLibrary(event);closeDrawer()">&#128218; Disease Library</a>
+    <a href="#aboutSection" class="mobile-nav-link" onclick="closeDrawer()">&#8505;&#65039; About</a>
+    <div class="mobile-drawer-divider"></div>
+    <a href="#guideSection" class="mobile-nav-link" onclick="closeDrawer()">&#128247; Photo Tips</a>
+    <a href="#intelSection" class="mobile-nav-link" onclick="closeDrawer()">&#128302; Research Explorer</a>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+</header>
+
+<main id="mainContent">
+
+<section class="hero-section" id="diagnoseSection">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span id="heroBadgeText">AI-POWERED CROP DIAGNOSIS</span>
+      </div>
+      <h1 class="hero-title" id="heroTitle">
+        Diagnose Your Crop
+        <span class="text-gradient" id="heroTitleHighlight">Instantly.</span>
+      </h1>
+      <p class="hero-subtitle" id="heroSubtitle">
+        Upload a leaf photo &#8212; our AI detects diseases across 54 trained classes in seconds.
+      </p>
+
+      <div class="upload-studio" id="uploadCard">
+        <div class="dropzone" id="dropzone" tabindex="0" role="region" aria-label="Image Upload Zone">
+          <input type="file" id="imageInput" accept="image/jpeg,image/png,image/webp" hidden>
+          <div class="dropzone-empty" id="dropzoneEmpty">
+            <div class="dropzone-icon">&#127811;</div>
+            <h2 class="dropzone-title" id="dropzonePrompt">Drag &amp; Drop Leaf Photo</h2>
+            <p class="dropzone-subtext" id="dropzoneSubtext">or browse from your device &middot; JPG, PNG, WebP &middot; max 15 MB</p>
+            <div class="dropzone-buttons">
+              <button type="button" class="btn btn-primary" id="browseFileBtn">&#128193; Choose Photo</button>
+              <button type="button" class="btn btn-outline" id="cameraSnapBtn">&#128247; Camera</button>
+            </div>
+          </div>
+          <div class="preview-container hidden" id="previewContainer">
+            <div class="preview-image-wrapper">
+              <img id="previewImage" src="" alt="Selected leaf preview">
+            </div>
+            <div class="preview-meta" id="previewMeta">
+              <span id="previewDimensions">&#8212;</span>
+              <span id="previewSize">&#8212;</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="upload-controls-bar">
+          <div class="crop-hint-wrapper">
+            <label for="cropHintSelect" id="cropHintLabel">Crop Hint (optional)</label>
+            <select id="cropHintSelect" class="form-select">
+              <option value="" selected>Auto-detect</option>
+              <optgroup label="Supported Crops - AI Vision (54 classes)">
+                <option value="Apple">Apple</option>
+                <option value="Blueberry">Blueberry</option>
+                <option value="Cherry">Cherry</option>
+                <option value="Corn">Corn / Maize</option>
+                <option value="Grape">Grape</option>
+                <option value="Orange">Orange / Citrus</option>
+                <option value="Paddy">Paddy / Rice</option>
+                <option value="Peach">Peach</option>
+                <option value="Pepper, bell">Bell Pepper</option>
+                <option value="Potato">Potato</option>
+                <option value="Raspberry">Raspberry</option>
+                <option value="Soybean">Soybean</option>
+                <option value="Squash">Squash</option>
+                <option value="Strawberry">Strawberry</option>
+                <option value="Tomato">Tomato</option>
+                <option value="Wheat">Wheat</option>
+              </optgroup>
+              <optgroup label="Knowledge + Search Only">
+                <option value="Banana">Banana</option>
+                <option value="Black Pepper">Black Pepper</option>
+                <option value="Cardamom">Cardamom</option>
+                <option value="Cashew">Cashew</option>
+                <option value="Chilli">Chilli</option>
+                <option value="Coconut">Coconut</option>
+                <option value="Coffee">Coffee</option>
+                <option value="Cotton">Cotton</option>
+                <option value="Ginger">Ginger</option>
+                <option value="Groundnut">Groundnut</option>
+                <option value="Mango">Mango</option>
+                <option value="Mustard">Mustard</option>
+                <option value="Onion">Onion</option>
+                <option value="Palm">Palm</option>
+                <option value="Pigeon pea">Pigeon Pea</option>
+                <option value="Rubber">Rubber</option>
+                <option value="Sugarcane">Sugarcane</option>
+                <option value="Tea">Tea</option>
+                <option value="Tobacco">Tobacco</option>
+                <option value="Turmeric">Turmeric</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="analyze-btn-wrapper">
+            <button type="button" class="btn btn-outline btn-icon hidden" id="removeImageBtn" aria-label="Remove image">&#128465;&#65039;</button>
+            <button type="button" class="btn btn-primary btn-analyze" id="analyzeImageBtn" disabled>
+              &#128269; <span id="analyzeText">Analyze Leaf</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="samples-preset-bar">
+          <span class="samples-title" id="samplesBarTitle">Try samples:</span>
+          <div class="samples-chips">
+            <button type="button" class="sample-chip" data-sample="tomato" id="sampleTomato">&#127813; Tomato Blight</button>
+            <button type="button" class="sample-chip" data-sample="paddy" id="samplePaddy">&#127806; Rice Blight</button>
+            <button type="button" class="sample-chip" data-sample="wheat" id="sampleWheat">&#127806; Wheat Rust</button>
+            <button type="button" class="sample-chip" data-sample="apple" id="sampleApple">&#127822; Apple Healthy</button>
+          </div>
+        </div>
+
+        <div class="alert-box alert-error hidden" id="uploadErrorAlert" role="alert">
+          <span class="alert-icon">&#9888;&#65039;</span>
+          <span id="uploadErrorText"></span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="hero-right">
+      <div class="tips-card">
+        <h3 class="tips-card-title">&#128247; Best Shot Tips</h3>
+        <ul class="tips-list">
+          <li><span class="tip-check">&#10003;</span> <strong>Single leaf:</strong> Fill 70%+ of frame with one symptomatic leaf.</li>
+          <li><span class="tip-check">&#10003;</span> <strong>Natural light:</strong> Shoot in daytime, avoid harsh flash.</li>
+          <li><span class="tip-check">&#10003;</span> <strong>Sharp focus:</strong> Lesion textures must be clearly visible.</li>
+          <li><span class="tip-cross">&#10007;</span> <strong>Whole-field shots:</strong> Too distant for lesion detection.</li>
+          <li><span class="tip-cross">&#10007;</span> <strong>Covered lesions:</strong> Do not block spots with fingers.</li>
+        </ul>
+        <div class="tips-scope-pill">&#128737;&#65039; <strong>16 crops &middot; 54 disease classes</strong> detected by AI vision</div>
+      </div>
+      <div class="how-it-works">
+        <h3 class="hiw-title">How it works</h3>
+        <div class="hiw-steps">
+          <div class="hiw-step"><div class="hiw-num">01</div><div class="hiw-body"><strong>Upload Leaf Photo</strong><span>Take or select a clear leaf image</span></div></div>
+          <div class="hiw-step"><div class="hiw-num">02</div><div class="hiw-body"><strong>AI Inference</strong><span>YOLO neural network classifies the condition</span></div></div>
+          <div class="hiw-step"><div class="hiw-num">03</div><div class="hiw-body"><strong>Get Diagnosis</strong><span>View confidence, symptoms and treatment guidance</span></div></div>
+          <div class="hiw-step"><div class="hiw-num">04</div><div class="hiw-body"><strong>Research Sources</strong><span>Live ICAR, TNAU and IRRI extension citations</span></div></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="results-section" id="resultsSection">
+  <div class="results-container-inner">
+    <div class="card loading-card hidden" id="loadingSection" aria-live="polite">
+      <div class="spinner-large"></div>
+      <h3 class="loading-heading" id="loadingHeading">Analyzing Crop Foliage...</h3>
+      <p class="loading-step-text" id="loadingStepText">Sending image for GPU inference...</p>
+      <div class="progress-bar-track"><div class="progress-bar-fill" id="loadingProgressFill"></div></div>
+    </div>
+    <div class="card error-card hidden" id="errorSection" role="alert">
+      <div class="error-icon">&#9888;&#65039;</div>
+      <h3 class="error-title" id="errorTitle">Analysis Unavailable</h3>
+      <p class="error-description" id="errorDescriptionText">Unable to process this image.</p>
+      <button type="button" class="btn btn-primary" id="retryAnalysisBtn">Try Again</button>
+    </div>
+
+    <div class="results-wrapper hidden" id="resultSection">
+      <div class="alert-box alert-warning hidden" id="imageWarningAlert">
+        <span class="alert-icon">&#9888;&#65039;</span><span id="imageWarningText"></span>
+      </div>
+      <div class="rejection-box hidden" id="rejectionAlert">
+        <div class="rejection-header">
+          <span class="rejection-icon">&#128721;</span>
+          <div>
+            <h3 class="rejection-title" id="rejectionTitle">Uncertain Diagnosis</h3>
+            <p class="rejection-subtitle" id="rejectionSubtitle">AI Rejection Safeguard Triggered</p>
+          </div>
+        </div>
+        <p class="rejection-body" id="rejectionBodyText">This image may be outside supported classes. Upload a clearer leaf image or consult a local expert.</p>
+      </div>
+
+      <div class="card diagnosis-result-card">
+        <div class="result-top-grid">
+          <div class="result-image-box">
+            <img id="resultImage" src="" alt="Analyzed crop specimen">
+            <div class="result-image-tag" id="imageStatusTag">AI Analyzed</div>
+          </div>
+          <div class="result-details-box">
+            <div class="result-header-row">
+              <div>
+                <span class="result-crop-label" id="resultCropLabel">Predicted Crop</span>
+                <h3 class="result-crop-name" id="cropResultName">&#8212;</h3>
+              </div>
+              <div class="health-badge" id="conditionStatusBadge">
+                <span id="conditionStatusIcon">&#129440;</span>
+                <span id="conditionStatusText">Condition</span>
+              </div>
+            </div>
+            <div class="condition-display-row">
+              <span class="condition-sublabel" id="conditionSublabel">Detected Condition</span>
+              <h4 class="condition-name" id="diseaseResultName">&#8212;</h4>
+              <p class="pathogen-name" id="pathogenName">&#8212;</p>
+            </div>
+            <div class="confidence-container">
+              <div class="confidence-meta-row">
+                <span class="confidence-title">Model Confidence:</span>
+                <span class="confidence-value-badge" id="confidencePercent">0%</span>
+                <span class="confidence-tier-pill" id="confidenceTierPill">High</span>
+              </div>
+              <div class="confidence-meter-track" role="progressbar" id="confidenceMeterTrack" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <div class="confidence-meter-fill" id="confidenceMeterFill"></div>
+              </div>
+              <p class="confidence-disclaimer-note">&#8505;&#65039; <em>Statistical probability &#8212; not a verified field diagnosis. Always inspect the plant in person.</em></p>
+            </div>
+            <div class="result-button-row">
+              <button type="button" class="btn btn-secondary" id="speakResultBtn">&#128266; <span id="speakBtnText">Listen to Diagnosis</span></button>
+              <button type="button" class="btn btn-outline" id="newDiagnosisBtn">&#128247; <span id="newDiagnosisText">New Analysis</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="top-predictions-section">
+          <h4 class="subsection-title" id="topPredictionsTitle">Top-3 Model Predictions</h4>
+          <p class="subsection-subtext">The model evaluated 54 trained crop-disease categories:</p>
+          <div class="top-predictions-grid" id="topPredictionsGrid"></div>
+        </div>
+
+        <div class="guidance-tabs-container">
+          <div class="guidance-tab-headers" role="tablist">
+            <button type="button" class="tab-btn active" data-tab="symptomsTab" id="tabBtnSymptoms">&#128269; Symptoms</button>
+            <button type="button" class="tab-btn" data-tab="nextStepsTab" id="tabBtnNextSteps">&#128668; Next Steps</button>
+            <button type="button" class="tab-btn" data-tab="preventionTab" id="tabBtnPrevention">&#128737;&#65039; Prevention</button>
+            <button type="button" class="tab-btn" data-tab="descriptionTab" id="tabBtnDescription">&#128214; Overview</button>
+          </div>
+          <div class="guidance-tab-content">
+            <div class="tab-panel active" id="symptomsTab" role="tabpanel">
+              <h4 class="tab-panel-title">Typical Visible Symptoms</h4>
+              <ul class="guidance-list" id="symptomsList"><li>Symptoms will appear here after analysis.</li></ul>
+            </div>
+            <div class="tab-panel" id="nextStepsTab" role="tabpanel">
+              <h4 class="tab-panel-title">Recommended Farmer Actions</h4>
+              <ul class="guidance-list" id="nextStepsList"><li>Recommended actions will appear here after analysis.</li></ul>
+            </div>
+            <div class="tab-panel" id="preventionTab" role="tabpanel">
+              <h4 class="tab-panel-title">Preventive &amp; Cultural Practices</h4>
+              <ul class="guidance-list" id="preventionList"><li>Preventive measures will appear here after analysis.</li></ul>
+            </div>
+            <div class="tab-panel" id="descriptionTab" role="tabpanel">
+              <h4 class="tab-panel-title">Botanical &amp; Pathological Overview</h4>
+              <p class="guidance-paragraph" id="descriptionText">Overview will appear here after analysis.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert-box alert-warning advisory-warning-box">
+          <span class="alert-icon">&#9888;&#65039;</span>
+          <div>
+            <strong>Advisory Disclaimer:</strong>
+            <span id="preliminaryWarningText">Preliminary AI Diagnosis. Do not apply chemical pesticides based solely on this prediction. Consult a local agricultural officer or Krishi Vigyan Kendra (KVK).</span>
+          </div>
+        </div>
+
+        <div class="integrated-sources-card" id="integratedSourcesCard">
+          <div class="sources-header-row">
+            <div>
+              <h4 class="sources-card-title">&#128218; Extension Research Sources</h4>
+              <p class="sources-card-subtext">Live citations from ICAR, TNAU, IRRI, FAO via SerpApi.</p>
+            </div>
+            <button type="button" class="btn btn-outline btn-sm" id="refreshSourcesBtn">&#128260; Refresh</button>
+          </div>
+          <div class="sources-list" id="diagnosisSourcesList">
+            <p class="sources-empty-state">Agricultural intelligence citations will load here.</p>
+          </div>
+          <div class="sources-note">&#8505;&#65039; <em>Live Google/SerpApi results from agricultural publications.</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="library-overlay" id="libraryOverlay" onclick="closeLibrary()" aria-hidden="true"></div>
+<aside class="library-panel" id="libraryPanel" aria-label="Disease Library" aria-hidden="true">
+  <div class="library-header">
+    <div>
+      <h2 class="library-title">Disease Library</h2>
+      <p class="library-subtitle" id="subtitleKnowledge">131 verified conditions across 36 crops</p>
+    </div>
+    <button class="library-close-btn" onclick="closeLibrary()" aria-label="Close library">&#10005;</button>
+  </div>
+  <div class="library-search-bar">
+    <span class="search-icon">&#128269;</span>
+    <input type="text" id="catalogSearchInput" class="catalog-search-input" placeholder="Search conditions, crops, pathogens...">
+  </div>
+  <div class="crop-filter-chips" id="catalogCropChips">
+    <button type="button" class="crop-chip active" data-crop="all">All (54)</button>
+    <button type="button" class="crop-chip" data-crop="Paddy">Paddy (10)</button>
+    <button type="button" class="crop-chip" data-crop="Tomato">Tomato (10)</button>
+    <button type="button" class="crop-chip" data-crop="Wheat">Wheat (6)</button>
+    <button type="button" class="crop-chip" data-crop="Corn (maize)">Corn (4)</button>
+    <button type="button" class="crop-chip" data-crop="Apple">Apple (4)</button>
+    <button type="button" class="crop-chip" data-crop="Grape">Grape (4)</button>
+    <button type="button" class="crop-chip" data-crop="Potato">Potato (3)</button>
+    <button type="button" class="crop-chip" data-crop="Peach">Peach (2)</button>
+    <button type="button" class="crop-chip" data-crop="Pepper, bell">Pepper (2)</button>
+    <button type="button" class="crop-chip" data-crop="Strawberry">Strawberry (2)</button>
+    <button type="button" class="crop-chip" data-crop="Cherry">Cherry (2)</button>
+    <button type="button" class="crop-chip" data-crop="Others">Others (5)</button>
+  </div>
+  <div class="catalog-grid" id="catalogGrid"></div>
+</aside>
+
+<section class="section intel-section" id="intelSection">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-tag" id="tagIntel">LIVE RESEARCH</span>
+      <h2 class="section-title" id="titleIntel">Agricultural Research Explorer</h2>
+      <p class="section-subtitle" id="subtitleIntel">Search ICAR, IRRI, TNAU and government advisory databases in real time using SerpApi.</p>
+    </div>
+    <div class="card intel-search-card">
+      <form id="intelSearchForm" class="intel-form">
+        <div class="intel-form-grid">
+          <div class="form-group"><label for="intelCropInput">Crop Name</label><input type="text" id="intelCropInput" class="form-input" placeholder="e.g. Paddy, Tomato, Wheat" value="Tomato"></div>
+          <div class="form-group"><label for="intelDiseaseInput">Disease / Condition</label><input type="text" id="intelDiseaseInput" class="form-input" placeholder="e.g. Early blight, Blast, Rust" value="Early blight"></div>
+          <div class="form-group">
+            <label for="intelCategorySelect">Research Topic</label>
+            <select id="intelCategorySelect" class="form-select">
+              <option value="all" selected>All Sources &amp; Management</option>
+              <option value="symptoms">Symptoms &amp; Visual Identification</option>
+              <option value="prevention">Prevention &amp; Cultural Practices</option>
+              <option value="management">Integrated Pest/Disease Management (IPM)</option>
+              <option value="extension">Official ICAR / University Extension Only</option>
+            </select>
+          </div>
+        </div>
+        <div class="intel-custom-query-row">
+          <label for="intelCustomQuery">Custom Query (Optional):</label>
+          <input type="text" id="intelCustomQuery" class="form-input" placeholder="Optional specific question (e.g., biological control of tomato early blight in India)">
+        </div>
+        <div class="intel-submit-row">
+          <button type="submit" class="btn btn-primary" id="intelSubmitBtn">&#128269; Search Agricultural Intelligence</button>
+          <span class="intel-helper-text">Powered by SerpApi &middot; Prioritizes ICAR, TNAU, IRRI, FAO.</span>
+        </div>
+      </form>
+      <div class="intel-results-wrapper" id="intelResultsWrapper">
+        <div class="intel-status-bar" id="intelStatusBar"><span id="intelStatusCount">Ready to search agricultural sources.</span></div>
+        <div class="intel-results-grid" id="intelResultsGrid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section guide-section" id="guideSection">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-tag" id="tagGuide">FIELD GUIDE</span>
+      <h2 class="section-title" id="titleGuide">How to Photograph Leaves for AI Diagnosis</h2>
+      <p class="section-subtitle" id="subtitleGuide">Follow these visual guidelines to ensure reliable AI inference and agricultural evaluation.</p>
+    </div>
+    <div class="guide-grid">
+      <div class="guide-card do-card">
+        <div class="guide-card-badge">DO THIS (RECOMMENDED)</div>
+        <ul class="guide-items">
+          <li><strong>Single Leaf Close-Up:</strong> Position camera 15&#8211;25 cm from the leaf so leaf lesions fill the view.</li>
+          <li><strong>Both Sides of Leaf:</strong> For suspected rust or mildew, photograph both upper and lower leaf surfaces.</li>
+          <li><strong>Diffuse Daylight:</strong> Early morning or overcast daylight prevents harsh glare on glossy leaves.</li>
+          <li><strong>Steady Focus:</strong> Tap your phone screen to lock focus onto leaf spot borders.</li>
+        </ul>
+      </div>
+      <div class="guide-card dont-card">
+        <div class="guide-card-badge dont-badge">AVOID THIS</div>
+        <ul class="guide-items">
+          <li><strong>Wide Field Shots:</strong> Whole plants or field rows do not provide enough pixel detail for leaf lesions.</li>
+          <li><strong>Heavy Motion Blur:</strong> Blurry leaf veins lead to ambiguous low-confidence predictions.</li>
+          <li><strong>Hands Over Symptoms:</strong> Do not cover lesions with fingers or clip holders.</li>
+          <li><strong>Severe Night Flash:</strong> Artificial flash washes out fine discoloration patterns.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section about-section" id="aboutSection">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-tag" id="tagAbout">ABOUT AGRIINTEL</span>
+      <h2 class="section-title">AI-Powered Agricultural Intelligence</h2>
+      <p class="section-subtitle">AgriIntel combines computer vision and curated agricultural knowledge to help farmers, researchers, and extension officers make fast, informed decisions.</p>
+    </div>
+    <div class="about-grid">
+      <div class="card about-mission-card">
+        <h3 class="spec-title">&#127806; Mission &amp; Responsible AI</h3>
+        <p>Democratizing agricultural AI for smallholder farmers in India and beyond. Our AI provides a first-opinion diagnosis to help users know when to seek expert assistance &#8212; never to replace it.</p>
+        <p>Built on the PlantVillage benchmark dataset with additional rice and wheat disease imagery from IRRI and ICAR. Integrated SerpApi ensures live, current advisory information.</p>
+        <p><strong>Always consult a local agricultural officer (KVK) before applying treatments.</strong></p>
+      </div>
+      <div class="card">
+        <h3 class="spec-title">&#9881;&#65039; Technical Specifications</h3>
+        <div class="spec-list">
+          <div class="spec-item"><span class="spec-name">AI Architecture</span><span class="spec-value">YOLOv8-cls (v4.2)</span></div>
+          <div class="spec-item"><span class="spec-name">Supported Classes</span><span class="spec-value" id="aboutClassCount">54 disease classes</span></div>
+          <div class="spec-item"><span class="spec-name">Supported Crops</span><span class="spec-value">16 crop species</span></div>
+          <div class="spec-item"><span class="spec-name">Knowledge Base</span><span class="spec-value">131 conditions &middot; 36 crops</span></div>
+          <div class="spec-item"><span class="spec-name">Training Data</span><span class="spec-value">68,000+ benchmark images</span></div>
+          <div class="spec-item"><span class="spec-name">Inference Hardware</span><span class="spec-value" id="aboutGpuValue">GPU / CPU</span></div>
+          <div class="spec-item"><span class="spec-name">Backend</span><span class="spec-value">Python &middot; Flask &middot; PyTorch</span></div>
+          <div class="spec-item"><span class="spec-name">Research API</span><span class="spec-value">SerpApi (Google Scholar)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <div class="footer-logo">&#127807; AgriIntel</div>
+      <p class="footer-tagline">AI-Powered Crop Disease Detection &amp; Agricultural Intelligence</p>
+      <p class="footer-copy">&copy; 2025 AgriIntel &middot; Research prototype &middot; Not for commercial use</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Features</h4>
+        <a href="#diagnoseSection">Diagnose Crop</a>
+        <a href="#" onclick="openLibrary(event)">Disease Library</a>
+        <a href="#intelSection">Research Explorer</a>
+        <a href="#guideSection">Photo Guide</a>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <a href="#aboutSection">About</a>
+        <a href="#">PlantVillage Dataset</a>
+        <a href="#">ICAR Advisory</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function openLibrary(e) {
+    if (e) e.preventDefault();
+    document.getElementById('libraryPanel').classList.add('open');
+    document.getElementById('libraryPanel').setAttribute('aria-hidden','false');
+    document.getElementById('libraryOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+function closeLibrary() {
+    document.getElementById('libraryPanel').classList.remove('open');
+    document.getElementById('libraryPanel').setAttribute('aria-hidden','true');
+    document.getElementById('libraryOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+}
+function closeDrawer() {
+    document.getElementById('mobileDrawer').classList.remove('open');
+    document.getElementById('drawerOverlay').classList.remove('active');
+    document.getElementById('hamburgerBtn').setAttribute('aria-expanded','false');
+    document.getElementById('hamburgerBtn').classList.remove('active');
+}
+document.getElementById('hamburgerBtn').addEventListener('click', function() {
+    var drawer = document.getElementById('mobileDrawer');
+    var isOpen = drawer.classList.toggle('open');
+    document.getElementById('drawerOverlay').classList.toggle('active', isOpen);
+    this.setAttribute('aria-expanded', isOpen);
+    this.classList.toggle('active', isOpen);
+});
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { closeLibrary(); closeDrawer(); }
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>

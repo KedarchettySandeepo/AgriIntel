@@ -9,14 +9,19 @@ __pycache__/
 # YOLO / trained models / runs
 runs/
 *.pt
+!models/best.pt
 
 # Datasets
 dataset/
 
+# Backup & scratch files
+*.bak
+test_diagnose_live.py
+test_search_live.py
+
 # Generated evaluation files
 *.csv
 *.png
-
 
 # Error/output folders
 wheat_errors/

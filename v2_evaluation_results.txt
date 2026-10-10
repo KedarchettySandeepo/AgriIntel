@@ -1,0 +1,90 @@
+AI CROP DISEASE DETECTOR - MODEL V2
+============================================================
+
+Total test images: 6507
+Top-1 Accuracy: 99.12%
+Top-5 Accuracy: 99.94%
+Paddy Test Images: 1048
+Paddy Accuracy: 96.66%
+
+PER-CLASS ACCURACY
+============================================================
+
+
+--- Apple ---
+Apple___Apple_scab: 63/63 (100.00%)
+Apple___Black_rot: 63/63 (100.00%)
+Apple___Cedar_apple_rust: 28/28 (100.00%)
+Apple___healthy: 165/165 (100.00%)
+
+--- Blueberry ---
+Blueberry___healthy: 151/151 (100.00%)
+
+--- Cherry_(including_sour) ---
+Cherry_(including_sour)___Powdery_mildew: 106/106 (100.00%)
+Cherry_(including_sour)___healthy: 86/86 (100.00%)
+
+--- Corn_(maize) ---
+Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot: 46/52 (88.46%)
+Corn_(maize)___Common_rust_: 120/120 (100.00%)
+Corn_(maize)___Northern_Leaf_Blight: 97/99 (97.98%)
+Corn_(maize)___healthy: 117/117 (100.00%)
+
+--- Grape ---
+Grape___Black_rot: 118/118 (100.00%)
+Grape___Esca_(Black_Measles): 139/139 (100.00%)
+Grape___Leaf_blight_(Isariopsis_Leaf_Spot): 109/109 (100.00%)
+Grape___healthy: 43/43 (100.00%)
+
+--- Orange ---
+Orange___Haunglongbing_(Citrus_greening): 552/552 (100.00%)
+
+--- Paddy ---
+Paddy___bacterial_leaf_blight: 47/49 (95.92%)
+Paddy___bacterial_leaf_streak: 37/38 (97.37%)
+Paddy___bacterial_panicle_blight: 35/35 (100.00%)
+Paddy___blast: 169/175 (96.57%)
+Paddy___brown_spot: 93/97 (95.88%)
+Paddy___dead_heart: 144/145 (99.31%)
+Paddy___downy_mildew: 54/62 (87.10%)
+Paddy___hispa: 156/160 (97.50%)
+Paddy___normal: 169/177 (95.48%)
+Paddy___tungro: 109/110 (99.09%)
+
+--- Peach ---
+Peach___Bacterial_spot: 231/231 (100.00%)
+Peach___healthy: 36/36 (100.00%)
+
+--- Pepper,_bell ---
+Pepper,_bell___Bacterial_spot: 101/101 (100.00%)
+Pepper,_bell___healthy: 149/149 (100.00%)
+
+--- Potato ---
+Potato___Early_blight: 100/100 (100.00%)
+Potato___Late_blight: 100/100 (100.00%)
+Potato___healthy: 15/16 (93.75%)
+
+--- Raspberry ---
+Raspberry___healthy: 38/38 (100.00%)
+
+--- Soybean ---
+Soybean___healthy: 508/509 (99.80%)
+
+--- Squash ---
+Squash___Powdery_mildew: 184/184 (100.00%)
+
+--- Strawberry ---
+Strawberry___Leaf_scorch: 112/112 (100.00%)
+Strawberry___healthy: 47/47 (100.00%)
+
+--- Tomato ---
+Tomato___Bacterial_spot: 209/214 (97.66%)
+Tomato___Early_blight: 97/100 (97.00%)
+Tomato___Late_blight: 191/192 (99.48%)
+Tomato___Leaf_Mold: 95/96 (98.96%)
+Tomato___Septoria_leaf_spot: 178/178 (100.00%)
+Tomato___Spider_mites Two-spotted_spider_mite: 169/169 (100.00%)
+Tomato___Target_Spot: 139/141 (98.58%)
+Tomato___Tomato_Yellow_Leaf_Curl_Virus: 537/537 (100.00%)
+Tomato___Tomato_mosaic_virus: 38/38 (100.00%)
+Tomato___healthy: 160/160 (100.00%)

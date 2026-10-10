@@ -1,0 +1,15 @@
+# Ignore local environments & caches
+venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+
+# Ignore local datasets & training experiments
+dataset/
+runs/
+*.bak
+wheat_errors/
+*.csv
+.DS_Store
+Thumbs.db
